@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Enigma 12 | Kriptópolis</title>
+<meta charset="utf-8">
+<meta content="Enigma 12" about="/enigma-12" property="dc:title">
+<meta about="/enigma-12" property="sioc:num_replies" content="0" datatype="xsd:integer">
+<meta name="Generator" content="Drupal 7 (http://drupal.org)">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="next" href="https://kriptopolis.github.io/enigma/enigma-13.html">
+<link rel="prev" href="https://kriptopolis.github.io/enigma/enigma-11.html">
+<link rel="shortcut icon" href="https://kriptopolis.github.io/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css">
+<link type="text/css" rel="stylesheet" href="https://kriptopolis.github.io/enigma/style.css">
+</head>
+<body><div class="container">
+<header id="header" class="clearfix"><div id="branding">
+<div id="logo"><a href="https://kriptopolis.github.io/" title="Página de inicio"><img src="https://kriptopolis.github.io/kriptopolis.png" alt="Kriptópolis logo"></a></div>
+<hgroup><h1 id="site-name"><a href="https://kriptopolis.github.io/" title="Página de inicio">Kriptópolis</a></h1>
+<h2 id="site-slogan">Criptografía y Seguridad</h2></hgroup>
+</div>
+<!-- /header region --></header><section id="main-content"><header class="clearfix"><h1 id="page-title">Enigma 12</h1></header><article id="article-257" class="article article-type-book article-lang-es odd article-full clearfix" about="/enigma-12" typeof="sioc:Item foaf:Document" role="article"><footer class="submitted"><span property="dc:date dc:created" content="2012-06-03T19:37:13+02:00" datatype="xsd:dateTime" rel="sioc:has_creator">Enviado por <span class="username" xml:lang="" about="/user/89" typeof="sioc:UserAccount" property="foaf:name">Roman</span> en <time datetime="2012-06-03T19:37:13Z" pubdate="pubdate">Dom, 03/06/2012 - 7:37pm</time></span></footer><div class="article-content">
+<div class="field field-name-body field-type-text-with-summary field-label-hidden view-mode-full"><div class="field-items"><div class="field-item even" property="content:encoded">
+<p><em>Por Román Ceano</em></p>
+<p>Mediante permutaciones, no es difícil construir el modelo matemático de una máquina Enigma. Para definir la permutación inducida por toda la máquina, basta con nombrar la permutación que induce cada rueda con una letra y ponerlas una detrás de la otra. Si llamamos L,M,N las permutaciones inducidas por cada una de las tres ruedas, R a la que induce el reflector y S la que induce el panel de conexionado obtenemos que la permutación de una máquina completa es igual a la composición SNMLRL’M’N’S’ donde las letras primas representan permutaciones inversas. Si queremos obtener el alfabeto que define la permutación resultado para una posición determinada debemos teclear todas las letras en orden alfabético, pero teniendo la precaución de deshacer cada vez el giro de las ruedas que se hayan movido. Si repitiéramos la operación para todas las posiciones posibles (y en el caso de la Enigma I cada una con todas las configuraciones del panel) obtendríamos el juego completo de alfabetos de Enigma.</p>
+<p>Las sustituciones determinadas por las colecciones diarias de indicadores eran el resultado de las dos veces que el operador tecleaba una misma letra. Si un día determinado, el operador tecleaba una cierta letra en primer lugar y obtenía una J, cuando volviera a teclear esa misma letra desconocida tres posiciones más allá obtendría una B. No se podía saber qué tecla había tecleado el operador, pero se podía asegurar que para la misma posición inicial, una J en la primera posición implicaba una B en la cuarta (lo mismo pasaba para las parejas de posiciones 2ª y 5ª; y 3ª y 6ª). Podemos definir una permutación que transforme unas en otras para cada una de las tres parejas. Podemos decir que si a la letra que aparece en la primera posición le aplicamos la transformación determinada por la inversa de la que le aplica Enigma, obtendremos la letra original y si a esa letra le aplicamos la transformación que induce Enigma  en la cuarta posición obtendremos la cuarta letra. Como Enigma es simétrica, Rejewski definió: </p>
+<p><img src="https://kriptopolis.github.io/enigma/pics/enigma/ecuaciones01.gif" border="0" alt="ecuacion" hspace="8" vspace="0" align="middle" width="443" height="537"></p>
+<p>Su objetivo final sería, en caso de que fuese posible, relacionar estas composiciones de permutaciones conocidas con las permutaciones de las ruedas. Para ello, debía refinar su modelo   para que reflejara el movimiento de éstas. Probablemente por consejo de sus mentores, decidió trabajar de momento sólo sobre los casos en los que se movía únicamente una rueda, despreciando aquellos casos en los que durante el tecleado del indicativo se mueven dos o tres ruedas. Estadísticamente esto último ocurre sólo en 6 de cada 26 posibilidades y la complejidad es infinitamente mayor. Gracias a esta abstracción, para recrear el movimiento de Enigma le bastó definir una nueva permutación muy sencilla (notada P) que convierte la a en b, la b en c, etc... es decir, una permutación que hace moverse una posición la letra aplicada a la permutación de cada rueda, con lo que se simula el giro. Situando esta permutación delante de la letra L -que representaba la permutación inducida por la rueda lenta- y su inversa detrás, obtuvo un modelo dinámico de Enigma. </p>
+<p>Ahora Rejewski estaba en condiciones de escribir un sistema de ecuaciones completo que reuniese todas las expresiones y todos los datos que tenía. Así por ejemplo disponía de las definiciones de A,B, C, etc... que, asumiendo que sólo se movía una rueda, eran de la forma :</p>
+<p><img src="https://kriptopolis.github.io/enigma/pics/enigma/ecuaciones02.gif" border="0" alt="ecuaciones" hspace="8" vspace="0" align="center" width="270" height="276"></p>
+<p>Para poder operar estas ecuaciones, Rejewski necesitaba conocer a fondo las reglas que gobernaban el álgebra de permutaciones. No sabemos cuánto recordaba de sus estudios y cuánto tuvo que repasar, pero en muy poco tiempo se convirtió en un experto. En esa época las permutaciones no eran populares entre los matemáticos, pero afortunadamente para Rejewski existía -para quien lo buscara- abundante material sobre el tema. Las permutaciones habían estado un tiempo en el centro del debate matemático y grandes genios les habían deparado su atención.</p>
+<p> </p>
+<p><span class="geshifilter"><code class="text geshifilter-text">© Román Ceano. Todos los derechos reservados.</code></span></p>
+<p> </p>
+</div></div></div>
+<footer id="book-navigation-36" class="book-navigation"><div class="page-links clearfix">
+<a href="https://kriptopolis.github.io/enigma/enigma-11.html" class="page-previous" title="Ir a la página anterior">‹ Enigma 11</a><a href="https://kriptopolis.github.io/enigma/" class="page-up" title="Ir a la página madre">Índice</a><a href="https://kriptopolis.github.io/enigma/enigma-13.html" class="page-next" title="Ir a la página siguiente">Enigma 13 ›</a>
+</div></footer>
+</div></article></section>
+</div></body>
+</html>
