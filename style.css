@@ -48,7 +48,7 @@ a, a.active { text-decoration: none; font-weight: 400; }
 header { font-family: "Lucida Sans Unicode","Lucida Sans","Lucida Grande",Verdana,Geneva,sans-serif; }
 
 blockquote { background: #efefef; border-radius: 15px; padding: 4px 10px; }
-blockquote::before { font-family: FontAwesome; content: '\f10d'; }
+blockquote::before { font-family: "Font Awesome 5 Free"; font-weight: 900; content: '\f10d'; }
 blockquote > p { margin: 0px; }
 blockquote > p:last-of-type { text-align: right; margin-bottom: 4px; }
 
